@@ -31,4 +31,4 @@ jobs:
         uses: gitleaks/gitleaks-action@v2
 
       - name: Run application test
-        run: python -m py_compile app.pypile app.py
+        run: python -m py_compile app.py
