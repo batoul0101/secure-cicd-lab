@@ -1,4 +1,4 @@
-name: CI
+name: Secure CI
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [main]
 
 jobs:
-  test:
+  security:
     runs-on: ubuntu-latest
 
     steps:
@@ -27,5 +27,8 @@ jobs:
           pip install pip-audit
           pip-audit
 
+      - name: Secret Detection
+        uses: gitleaks/gitleaks-action@v2
+
       - name: Run application test
-        run: python -m py_compile app.py
+        run: python -m py_compile app.pypile app.py
