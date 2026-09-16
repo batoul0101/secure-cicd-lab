@@ -22,5 +22,10 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      - name: Dependency Security Scan
+        run: |
+          pip install pip-audit
+          pip-audit
+
       - name: Run application test
         run: python -m py_compile app.py
